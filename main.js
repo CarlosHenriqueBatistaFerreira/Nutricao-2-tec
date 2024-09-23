@@ -1,11 +1,10 @@
-alert("Oi ");
-console.log("Oi Joao");
-
-var titulo = document.querySelector("h1");
+var ttiulo = document.querySelector(".titulo");
 titulo.textContent = "Carlos Nutrição";
 
-var trPaulo = document.querySelector("#paulo");
-console.log(trPaulo);
+var paciente =  document.querySelector("#primeiro-paciente");
 
-var tdPeso = trPaulo.querySelector(".info-peso");
-tdPeso.textContent = "150";
+var tdPeso = paciente.querySelector(".info-peso");
+var peso = tdPeso.textContent;
+
+var tdAltura = paciente.querySelector(".info-altura");
+var altura = tdAltura.textContent;
