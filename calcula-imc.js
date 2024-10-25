@@ -1,4 +1,6 @@
-var pacientes = document.querySelectorAll('.paciente');
+var titulo = document.querySelector(".titulo");
+titulo.textContent = "Carlos nutrição";
+var pacientes = document.querySelectorAll(".paciente");
 
 for (var i = 0; i < 5; i++){
   console.log(pacientes[i]);
@@ -17,16 +19,26 @@ for (var i = 0; i < 5; i++){
   if(peso <= 0 || peso >= 600){
     tdIMC.textContent = "Peso inválido ";
     pesoEnValido = false;
-    pacientes[i].style.color = "white";
+    pacientes[i].classList.add("dados-invalidos");
+    
   }
 
   if(altura <= 0 || altura > 2.80){
     tdIMC.textContent = "Altura inválido ";
     alturaEnValida = false;
+    pacientes[i].classList.add("dados-invalidos");
   }
 
   if (pesoEnValido && alturaEnValida){
-    var imc = peso / (altura*altura);
+    var imc = calculaImc(peso, altura);
     tdIMC.textContent = imc;
   }
+}
+
+function calculaImc(peso, altura) {
+  var imc = 0;
+  
+  imc = peso / (altura*altura);
+  
+  return imc.toFixed(2);
 }
